@@ -1,0 +1,25 @@
+#GET http://localhost:4000/patients/v1
+
+#POST http://localhost:4000/patients/v1
+#Content-Type: application/json
+#
+#{
+#  "name": "John",
+#  "address": "112 Willow St, Springfield",
+#  "email": "johnnyboi@gmail.com",
+#  "dateOfBirth": "1990-01-01",
+#  "registeredDate": "1995-11-02"
+#}
+
+
+#PUT http://localhost:4000/patients/v1/123e4567-e89b-12d3-a456-426614174000
+#Content-Type: application/json
+#
+#{
+#  "name": "John Doe",
+#  "address": "123 Main St, Springfield",
+#  "email": "john.doe@example.com",
+#  "dateOfBirth": "985-06-15"
+#}
+
+#DELETE http://localhost:4000/patients/v1/123e4567-e89b-12d3-a456-426614174000
