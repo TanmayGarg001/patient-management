@@ -1,0 +1,32 @@
+//Proto file is used to define the BillingService for patient service billing operations.
+//gRPC is a high-performance way for backend services to talk to each other using binary data over HTTP/2, making it much faster and more efficient than REST.
+// A proto file defines the shared contract between services — it specifies the methods, request types, and response types.
+// From this single file, gRPC automatically generates client and server code in any language, ensuring both sides follow the exact same structure.
+// Because of this strong typing, speed, and automatic code generation, gRPC is widely used in microservices and large distributed systems.
+//It helps in generating client and server code for gRPC communication.
+//gRPC is a high-performance RPC framework that uses HTTP/2 for transport, Protocol Buffers as the interface description language, and provides features such as authentication, load balancing, and more.
+
+syntax = "proto3";
+
+option java_multiple_files = true;// Allows generation of multiple Java files
+option java_package = "com.healthcare.patientservice.billing";// Specifies the Java package for generated code
+
+service BillingService {
+  // RPC method to create a billing account
+  rpc CreateBillingAccount(BillingRequest) returns (BillingResponse);
+
+
+}
+
+message BillingRequest {
+  //here the numbers are used for field identification in the serialized format, i.e. they are used to identify fields in the binary encoding of the message.
+  //So this is just a blueprint for the structure of the data being sent and received.
+  string patient_id = 1; // Unique identifier for the patient
+  string name = 2; // Name of the patient
+  string email = 3; // Email address of the patient
+}
+
+message BillingResponse {
+  string account_id = 1; // Unique identifier for the billing account
+  string status = 2; // Status of the billing account creation
+}

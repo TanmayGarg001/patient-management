@@ -8,7 +8,6 @@ import java.time.LocalDate;
 
 public class PatientMapper {
 
-
     public static PatientResponseDTO parseToDTO(Patient patient) {//Converts Patient entity to PatientResponseDTO to send data back to the client
         PatientResponseDTO patientResponseDTO = new PatientResponseDTO();
         patientResponseDTO.setId(patient.getId().toString());
